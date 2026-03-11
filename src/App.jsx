@@ -150,7 +150,7 @@ function Services() {
       <div className="max-w-5xl mx-auto">
         <div className="font-mono text-[10px] tracking-[3px] uppercase text-text-dim mb-4">Services</div>
         <h2 className="font-display font-bold text-3xl md:text-4xl mb-16">
-          Ce que je construis<span className="text-teal">.</span>
+          Ce que nous construisons<span className="text-teal">.</span>
         </h2>
         
         <div className="grid md:grid-cols-2 gap-6">
@@ -175,7 +175,7 @@ function Approach() {
       <div className="max-w-5xl mx-auto">
         <div className="font-mono text-[10px] tracking-[3px] uppercase text-text-dim mb-4">Approche</div>
         <h2 className="font-display font-bold text-3xl md:text-4xl mb-16">
-          Pas un dev généraliste<span className="text-teal">.</span>
+          Pas une agence généraliste<span className="text-teal">.</span>
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -185,7 +185,7 @@ function Approach() {
             </div>
             <h3 className="font-display font-semibold text-lg">Expertise terrain</h3>
             <p className="text-text-secondary text-sm leading-relaxed">
-              Je travaille dans l'industrie au quotidien. Je comprends les contraintes de production, qualité et processus avant d'écrire une ligne de code.
+              Nous venons de l'industrie. Nous comprenons les contraintes de production, qualité et processus avant d'écrire une ligne de code.
             </p>
           </div>
           <div className="space-y-4">
@@ -210,15 +210,15 @@ function Approach() {
 
         <div className="mt-16 bg-carbon border border-border rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
           <div className="flex-1">
-            <div className="font-mono text-[10px] tracking-[3px] uppercase text-text-dim mb-3">Qui suis-je</div>
-            <h3 className="font-display font-bold text-2xl mb-4">Guillaume Barré</h3>
+            <div className="font-mono text-[10px] tracking-[3px] uppercase text-text-dim mb-3">Comment nous travaillons</div>
+            <h3 className="font-display font-bold text-2xl mb-4">Notre méthode</h3>
             <p className="text-text-secondary text-sm leading-relaxed mb-3">
-              Chargé de missions industrialisation chez un fabricant de dispositifs médicaux. 
-              En parallèle, je conçois des outils digitaux pour les PME qui veulent sortir de l'artisanat opérationnel.
+              Nous concevons des outils digitaux pour les PME qui veulent sortir de l'artisanat opérationnel.
+              Notre ancrage dans l'industrie nous permet de comprendre vos enjeux avant de proposer une solution.
             </p>
             <p className="text-text-secondary text-sm leading-relaxed">
-              Formation Technicien ES en Processus. Certifié DMAIC / Six Sigma. 
-              Basé dans le Canton du Jura, je travaille avec des PME de toute la Suisse romande.
+              Certifiés DMAIC / Six Sigma, nous accompagnons les PME de toute la Suisse romande
+              avec une approche terrain et des résultats concrets.
             </p>
           </div>
           <div className="flex flex-col gap-2 min-w-[200px]">
@@ -249,7 +249,7 @@ function Contact() {
     const email = data.get('email')
     const message = data.get('message')
     
-    window.location.href = `mailto:guillaume.barre@procelar.com?subject=Contact via procelar.com — ${name}&body=${encodeURIComponent(`De: ${name}\nEmail: ${email}\n\n${message}`)}`
+    window.location.href = `mailto:contact@procelar.com?subject=Contact via procelar.com — ${name}&body=${encodeURIComponent(`De: ${name}\nEmail: ${email}\n\n${message}`)}`
     
     setTimeout(() => {
       setLoading(false)
@@ -265,7 +265,7 @@ function Contact() {
           Un projet en tête<span className="text-teal">?</span>
         </h2>
         <p className="text-text-secondary mb-12 max-w-lg">
-          Décrivez votre besoin en quelques lignes. Je reviens vers vous sous 48h avec une première analyse gratuite.
+          Décrivez votre besoin en quelques lignes. Notre équipe revient vers vous sous 48h avec une première analyse gratuite.
         </p>
 
         {sent ? (
@@ -331,7 +331,7 @@ function Footer() {
           Clarity in every process.
         </div>
         <div className="text-xs text-text-dim">
-          © {new Date().getFullYear()} Procelar · Courrendlin, Suisse
+          © {new Date().getFullYear()} Procelar · Suisse romande
         </div>
       </div>
     </footer>
