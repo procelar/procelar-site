@@ -512,22 +512,25 @@ function Contact() {
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    const form = e.target
-    const data = new FormData(form)
+    const data = new FormData(e.target)
 
-    const name = data.get('name')
-    const email = data.get('email')
-    const message = data.get('message')
-
-    window.location.href = `mailto:contact@procelar.com?subject=Contact via procelar.com — ${name}&body=${encodeURIComponent(`De: ${name}\nEmail: ${email}\n\n${message}`)}`
-
-    setTimeout(() => {
+    try {
+      const res = await fetch('https://formspree.io/f/mgonynen', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      })
+      if (res.ok) {
+        setSent(true)
+      }
+    } catch {
+      // fallback silencieux
+    } finally {
       setLoading(false)
-      setSent(true)
-    }, 1000)
+    }
   }
 
   return (
@@ -544,8 +547,8 @@ function Contact() {
         {sent ? (
           <div className="bg-teal-glow border border-teal/30 rounded-2xl p-10 text-center">
             <div className="text-teal text-4xl mb-4">✓</div>
-            <h3 className="font-display font-semibold text-xl mb-2">Message prêt à envoyer</h3>
-            <p className="text-text-secondary text-sm">Votre client mail va s'ouvrir avec le message pré-rempli.</p>
+            <h3 className="font-display font-semibold text-xl mb-2">Message envoyé</h3>
+            <p className="text-text-secondary text-sm">Procelar revient vers vous sous 48h.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
